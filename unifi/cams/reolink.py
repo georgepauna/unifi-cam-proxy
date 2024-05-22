@@ -133,7 +133,7 @@ class Reolink(UnifiCamBase):
 
         return (
             "-c:a copy -c:v copy -vbsf"
-            f' "h264_metadata=tick_rate={fps*2}"'
+            f' "h264_metadata=tick_rate={fps*2*1000}/1001"'
         )
 
     async def get_stream_source(self, stream_index: str) -> str:
